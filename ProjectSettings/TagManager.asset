@@ -8,6 +8,9 @@ TagManager:
   - SecondPlayer
   - Floor
   - Food
+  - Tea
+  - Milk
+  - Coffe
   layers:
   - Default
   - TransparentFX

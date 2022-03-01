@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 742117846}
   - component: {fileID: 742117845}
   - component: {fileID: 742117844}
+  - component: {fileID: 742117848}
   m_Layer: 0
   m_Name: Area Ontrigger 1
   m_TagString: Untagged
@@ -394,6 +395,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &742117848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742117843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d30a97eb37afd4e82e15132b6c2934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food:
+  - Milk
+  - Coffe
+  - Tea
+  RandomFood: 
 --- !u!1 &1387660107
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +618,7 @@ GameObject:
   - component: {fileID: 2013062891}
   m_Layer: 0
   m_Name: Object 1
-  m_TagString: Untagged
+  m_TagString: Milk
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
