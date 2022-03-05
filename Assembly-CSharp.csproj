@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Advanced Pool\AdvancedPooling.cs" />
     <Compile Include="Assets\Scripts\Advanced Pool\SpawnAdvanced.cs" />
+    <Compile Include="Assets\Scripts\ObjectRecognition.cs" />
     <Compile Include="Assets\Scripts\Simple Pool\CritterReturn.cs" />
     <Compile Include="Assets\Scripts\SpawnTrigger.cs" />
     <Compile Include="Assets\Scripts\Character Script\ThirdPersonMovement.cs" />
@@ -68,7 +69,7 @@
     <Compile Include="Assets\Scripts\Food Spawn &amp; Delete\DispencerActivator.cs" />
     <Compile Include="Assets\Scripts\Camera\CullingMask.cs" />
     <Compile Include="Assets\Scripts\Simple Pool\PoolingObject.cs" />
-    <Compile Include="Assets\Scripts\ObjectRecognition.cs" />
+    <Compile Include="Assets\Scripts\Character Script\SinglePlayerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
