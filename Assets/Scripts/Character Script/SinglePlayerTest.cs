@@ -79,7 +79,7 @@ public class SinglePlayerTest : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Food")
+        if(other.gameObject.tag == "Food" || other.gameObject.tag == "Drink")
         {
             isDetected = true;
             objectToPickUp = other.gameObject;
