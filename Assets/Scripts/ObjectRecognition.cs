@@ -13,12 +13,13 @@ public class ObjectRecognition : MonoBehaviour
     string NameRandom;
     public string RandomFood;
 
+    bool nextOrder;
+
     // Start is called before the first frame update
     void Start()
     {
-        int randomIndex = Random.Range(0, food.Length);
-        string randomName = food[randomIndex];
-        NameRandom = randomName;
+        RandomOrder();
+        nextOrder = false;
     }
 
     // Update is called once per frame
@@ -33,6 +34,11 @@ public class ObjectRecognition : MonoBehaviour
         {
             iconSource.sprite = icon[1];
         }
+
+        if(nextOrder)
+        {
+            RandomOrder();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,6 +46,15 @@ public class ObjectRecognition : MonoBehaviour
         if(other.tag == RandomFood)
         {
             Destroy(other.gameObject);
+            nextOrder = true;
         }
+    }
+
+    void RandomOrder()
+    {
+        int randomIndex = Random.Range(0, food.Length);
+        string randomName = food[randomIndex];
+        NameRandom = randomName;
+        nextOrder = false;
     }
 }
