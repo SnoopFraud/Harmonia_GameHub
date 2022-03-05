@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectRecognition : MonoBehaviour
 {
     public string[] food;
+    public Sprite[] icon;
+
+    public Image iconSource;
+
     string NameRandom;
     public string RandomFood;
 
@@ -20,6 +25,14 @@ public class ObjectRecognition : MonoBehaviour
     void Update()
     {
         RandomFood = NameRandom;
+        if(RandomFood == "Food")
+        {
+            iconSource.sprite = icon[0];
+        }
+        else if (RandomFood == "Drink")
+        {
+            iconSource.sprite = icon[1];
+        }
     }
 
     private void OnTriggerEnter(Collider other)
