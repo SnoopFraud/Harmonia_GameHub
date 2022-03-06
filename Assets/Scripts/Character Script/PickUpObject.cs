@@ -6,7 +6,6 @@ public class PickUpObject : MonoBehaviour
 {
 	public Transform player1;
 	public Transform player2;
-	public float throwForce = 10;
 
 	[SerializeField]
 	private bool hasPlayer1 = false;

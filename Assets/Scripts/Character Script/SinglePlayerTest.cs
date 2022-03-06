@@ -53,41 +53,51 @@ public class SinglePlayerTest : MonoBehaviour
         playervelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playervelocity * Time.deltaTime);
 
+        
         if(isGrabed)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                objectToPickUp.GetComponent<Rigidbody>().isKinematic = false;
-                objectToPickUp.transform.parent = null;
-                isGrabed = false;
-
-                
+                dropItem();
             }
         }
         else
         {
             if (Input.GetKeyDown(KeyCode.E) && isDetected)
             {
-                objectToPickUp.GetComponent<Rigidbody>().isKinematic = true;
-                objectToPickUp.transform.parent = grabSlot;
-                objectToPickUp.transform.localPosition = Vector3.zero;
-                objectToPickUp.transform.localEulerAngles = Vector3.zero;
-                isGrabed = true;
+                pickUpItem();
             }
         }
+        
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider item)
     {
-        if(other.gameObject.tag == "Food" || other.gameObject.tag == "Drink")
+        if(item.gameObject.tag == "Food" || item.gameObject.tag == "Drink")
         {
             isDetected = true;
-            objectToPickUp = other.gameObject;
+            objectToPickUp = item.gameObject;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider item)
     {
         isDetected = false;
+    }
+
+    void pickUpItem()
+    {
+        objectToPickUp.transform.parent = grabSlot;
+        objectToPickUp.transform.localPosition = Vector3.zero;
+        objectToPickUp.transform.localEulerAngles = Vector3.zero;
+        isGrabed = true;
+        objectToPickUp.GetComponent<Rigidbody>().isKinematic = true;
+    }
+
+    void dropItem()
+    {
+        objectToPickUp.GetComponent<Rigidbody>().isKinematic = false;
+        objectToPickUp.transform.parent = null;
+        isGrabed = false;
     }
 }

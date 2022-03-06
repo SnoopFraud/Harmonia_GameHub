@@ -5,7 +5,7 @@ using UnityEngine;
 public class DispencerActivator : MonoBehaviour
 {
     [SerializeField] private bool readytopick = false;
-    [SerializeField] private GameObject Food;
+    public GameObject Food;
     
     public Transform spawnPosition;
 
@@ -28,9 +28,14 @@ public class DispencerActivator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad0) && readytopick)
+        if (Input.GetKeyDown(KeyCode.E) && readytopick)
         {
-            Instantiate(Food, spawnPosition.transform.position, Quaternion.identity);
+            Instantiate(Food, spawnPosition.transform.position, spawnPosition.transform.rotation);
         }
+    }
+
+    void Spawn()
+    {
+        Instantiate(Food, spawnPosition.transform.position, spawnPosition.transform.rotation);
     }
 }

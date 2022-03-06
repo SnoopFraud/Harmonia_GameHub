@@ -41,11 +41,11 @@ public class ObjectRecognition : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider Item)
     {
-        if(other.tag == RandomFood)
+        if(Item.tag == RandomFood)
         {
-            Destroy(other.gameObject);
+            Destroy(Item.gameObject);
             nextOrder = true;
         }
     }
